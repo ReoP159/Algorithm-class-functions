@@ -77,9 +77,6 @@ int pow (int x,int y){
 	return pow;
 }
 
-/*int getDigit(int n, int i){
-	return (n-((n/pow(10,i))*pow(10,i)))/pow(10,(i-1));		
-}*/
 
 int getDigit(int n, int i){
 	
