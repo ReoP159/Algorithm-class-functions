@@ -310,11 +310,3 @@ char toUpperCase(char c){
 char toLowerCase(char c){
 	return isLowerCase(c) ? c : c + 32;
 }
-
-int main(){
-	
-	cout << toLowerCase('G') << endl;
-
-	return 1;
-}
-
