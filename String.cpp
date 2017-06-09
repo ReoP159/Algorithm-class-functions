@@ -63,7 +63,7 @@ int indexOf (string s, char c, int offSet){
 
 
 int indexOfN(string s, char c, int n){
-	int z;
+	int z = 0;
 	for (int i=0; i<n;i++){
 		z += indexOf(s, c, z)+1;
 	}
