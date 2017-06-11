@@ -39,7 +39,7 @@ string collGetString(Coll c, int p){
 }
 
 int collFindString(Coll c, string s){
-    return findToken(c.sep, coll.sep, s);
+    return findToken(c.s, c.sep, s);
 }
 
 //integers
@@ -66,7 +66,7 @@ void collAddDouble(Coll& c, double d){
     addToken(c.s, c.sep, doubleToString(d));
 }
 
-void collSetDoubleAt(Coll& c, doube d, int p){
+void collSetDoubleAt(Coll& c, double d, int p){
     setTokenAt(c.s, c.sep, doubleToString(d), p);
 }
 
@@ -137,12 +137,13 @@ void collSort(Coll& c, T t, int compare(T,T), T stringToT(string), string tToStr
             }
 
         }
-        collSetAt(c, buff, i, tToString);
+        collSetAt(c, buff, pos, tToString);
         collSetAt(c, t, base, tToString );
         base++;
     }
 
 }
+
 
 
 
