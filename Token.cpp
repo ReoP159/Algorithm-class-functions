@@ -6,9 +6,12 @@ int tokenCount(string s, char sep){
 }
 
 string getTokenAt(string s, char sep, int i){
-    s = substring(s, indexOfN(s, sep, i));
-    return i > tokenCount(s, sep) ? s : substring(s ,0, indexOf(s, '|'));
-}
+//    s = i==0? substring(s, indexOfN(s, sep, i)) : substring(s, indexOfN(s, sep, i)+1);
+//    return i > tokenCount(s, sep) ? s : substring(s ,0, indexOf(s, '|'));
+   string r;
+   r= i==0? substring(s,0,indexOfN(s,sep,i+1)): i==(tokenCount(s,sep)-1)? substring(s,indexOfN(s,sep,i)+1): substring(s,indexOfN(s,sep,i)+1,indexOfN(s,sep,i+1));
+
+   return r;
 
 void addToken(string& s, char sep, string t){
     s += (s=="")? t : sep + t;
