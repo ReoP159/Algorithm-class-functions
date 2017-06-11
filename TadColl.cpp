@@ -98,12 +98,14 @@ int collFindChar(Coll c, char ch){
 
 //templates
 template <typename  T>
-void collAdd<T>(Coll& c, T t, string tToString(T)){
+void collAdd(Coll& c, T t, string tToString(T))
+{
     addToken(c.s, c.sep, tToString(t));
 }
 
 template <typename  T>
-void collSetAt<T>(Coll& c, T t, int p, string tToString(T)){
+void collSetAt(Coll& c, T t, int p, string tToString(T))
+{
     setTokenAt(c.s, c.sep, tToString(t), p);
 }
 
@@ -113,12 +115,17 @@ T collGetAt(Coll c, int p, T stringToT(string)){
 }
 
 template <typename  T, typename K>
-int collFind(Coll c, K k, int compare(T,K), T stringToT(string)){
-    for(int i = 0; i < collSize(c); i++){
-        if(compare(stringToT(getTokenAt(c.s,c.sep, i)), k) == 0) return i;
+int collFind(Coll c, K k, int compare(T,K), T stringToT(string))
+{
+    for(int i = 0; i < collSize(c); i++)
+    {
+        if(compare(stringToT(getTokenAt(c.s,c.sep, i)), k) == 0){
+           return i;
+        }
+
     }
     return -1;
-};
+}
 
 template <typename  T>
 void collSort(Coll& c, T t, int compare(T,T), T stringToT(string), string tToString(T)){
