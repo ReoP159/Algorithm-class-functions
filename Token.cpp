@@ -1,4 +1,4 @@
-#include "StringWork.cpp"
+#include "String.cpp"
 
 
 int tokenCount(string s, char sep){
